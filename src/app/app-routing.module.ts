@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { TemplateComponent } from './template/template.component';
 import {NotFoundComponent} from './shared/not-found/not-found.component';
+import { BibliotecaModule } from './pages/biblioteca/biblioteca.module';
 
 
 const routes: Routes = [
@@ -29,6 +30,10 @@ const routes: Routes = [
       {
         path: 'estudiantes',
         loadChildren: './pages/estudiantes/estudiantes.module#EstudiantesModule'
+      },
+      {
+        path: 'biblioteca',
+        loadChildren: './pages/biblioteca/biblioteca.module#BibliotecaModule'
       }
     ]
   },
