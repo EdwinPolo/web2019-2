@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-libro',
@@ -7,11 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LibroComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) {}
 
   open() {
+    
     console.log('you tappe')
   }
+
+  gotoExistencia(){
+        this.router.navigate(['/pages/biblioteca/existencia']);
+  }
+
 
   ngOnInit() {
   }
