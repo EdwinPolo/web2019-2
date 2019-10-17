@@ -9,6 +9,10 @@ export class LibroComponent implements OnInit {
 
   constructor() { }
 
+  open() {
+    console.log('you tappe')
+  }
+
   ngOnInit() {
   }
 
