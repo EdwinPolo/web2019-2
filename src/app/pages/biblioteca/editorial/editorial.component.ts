@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-editorial',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditorialComponent implements OnInit {
 
-  constructor() { }
+  public editorialForm: FormGroup;
+
+  constructor(protected fb: FormBuilder) { }
 
   ngOnInit() {
+  }
+
+  createForm() {
+    this.editorialForm = this.fb.group({
+      codigo: 'hdf',
+      nombre: 'dfghdfh',
+      fecha_nacimiento: 'gfhdfh'
+
+    });
   }
 
 }
