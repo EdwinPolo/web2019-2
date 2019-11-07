@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-editorial',
@@ -10,17 +10,25 @@ export class EditorialComponent implements OnInit {
 
   public editorialForm: FormGroup;
 
-  constructor(protected fb: FormBuilder) { }
+  //this was a test 
+  public profileForm = new FormGroup({
+    code: new FormControl('algo'),
+    description: new FormControl('algo 2'),
+    country: new FormControl('algo 2'),
+  });
+
+  constructor(protected fb: FormBuilder) { 
+    this.createForm()
+  }
 
   ngOnInit() {
   }
 
   createForm() {
     this.editorialForm = this.fb.group({
-      codigo: 'hdf',
-      nombre: 'dfghdfh',
-      fecha_nacimiento: 'gfhdfh'
-
+      code: ['test1', Validators.required],
+      description: ['test2', Validators.required],
+      country: ['test3', Validators.required]
     });
   }
 

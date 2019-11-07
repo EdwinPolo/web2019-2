@@ -1,1 +1,16 @@
-<p>areas works!</p>
+<form [formGroup]="areasForm">
+    <div class="form-group row">
+        <label for="inputCodigo" class="col-sm-2 col-form-label">Codigo</label>
+        <div class="col-sm-10">
+            <input type="text" formControlName="code" class="form-control" placeholder="Codigo">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputNombre" class="col-sm-2 col-form-label">Descripcion</label>
+        <div class="col-sm-10">
+            <input type="text" formControlName="description" class="form-control"placeholder="Descripcion">
+        </div>
+    </div>
+</form>
+
+<button type="button" (click)="createForm()"> Submit</button>

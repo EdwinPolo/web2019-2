@@ -1,25 +1,24 @@
 
- {{editorialForm.value|json()}}
-
-    <form formGroup="editorialForm">
+{{code}}
+    <form [formGroup]="editorialForm">
         <div class="form-group row">
             <label for="inputCodigo" class="col-sm-2 col-form-label">Codigo</label>
             <div class="col-sm-10">
-                <input type="text" formControlName="codigo" name="codigo" class="form-control" placeholder="Codigo">
+                <input type="text" formControlName="code" class="form-control" placeholder="Codigo">
             </div>
         </div>
         <div class="form-group row">
-            <label for="inputNombre" class="col-sm-2 col-form-label">Nombre</label>
+            <label for="inputNombre" class="col-sm-2 col-form-label">Descripcion</label>
             <div class="col-sm-10">
-                <input type="text" formControlName="nombre" name="nombre" class="form-control" placeholder="Nombre">
+                <input type="text" formControlName="description" class="form-control"placeholder="Descripcion">
             </div>
         </div>
         <div class="form-group row">
-            <label for="inputFechaNacimiento" class="col-sm-2 col-form-label">Fecha Nacimiento</label>
+            <label for="inputPAis" class="col-sm-2 col-form-label">Pais</label>
             <div class="col-sm-10">
-                <input type="text" formControlName="fecha_nacimiento" name="fecha_nacimiento" class="form-control" placeholder="Fecha Nacimiento">
+                <input type="text" formControlName="country" class="form-control" placeholder="Pais">
             </div>
         </div>
     </form>
 
-    <button type="button"> Submit</button>
+    <button type="button" (click)="createForm()"> Submit</button>

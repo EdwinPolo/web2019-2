@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-areas',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AreasComponent implements OnInit {
 
-  constructor() { }
+  public areasForm: FormGroup;
+
+  constructor(protected fb: FormBuilder) { 
+    this.createForm()
+  }
 
   ngOnInit() {
+  }
+
+  createForm() {
+    this.areasForm = this.fb.group({
+      code: ['test', Validators.required],
+      description: ['test', Validators.required]
+    });
   }
 
 }
